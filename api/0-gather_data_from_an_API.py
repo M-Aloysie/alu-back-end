@@ -24,4 +24,14 @@ if __name__ == "__main__":
     print("Employee {} is done with tasks({}/{}):".format(employee_name,
           task_com, total_task_done))
 
-    [print("\t {}".format(task.get("title"))) for task in total_tasks]
+    """
+        return name, total number of tasks & completed tasks
+    """
+    EMPLOYEE_NAME = employee_name
+    TOTAL_NUMBER_OF_TASKS = len(tasks)
+    NUMBER_OF_DONE_TASKS = len([k for k, v in tasks.items() if v is True])
+    print("Employee {} is done with tasks({}/{}):".format(
+        EMPLOYEE_NAME, NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS))
+    for k, v in tasks.items():
+        if v is True:
+            print("\t {}".format(k))
